@@ -1,0 +1,36 @@
+:root {
+  --color-bg: #FAF5FF;
+  --color-bg-soft: #FDF2F8;
+  --color-panel: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-accent: #A855F7;
+  --color-accent-hover: #9333EA;
+  --color-pink: #EC4899;
+  --color-border: #E9D5FF;
+  --color-text-secondary: #6B5B7A;
+  --color-text-primary: #2E1065;
+  --color-error: #E11D48;
+  --color-success: #059669;
+  --font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-size-label: 12px;
+  --font-size-body: 14px;
+  --font-size-heading: 18px;
+  --font-size-title: 24px;
+  --font-size-value: 32px;
+  --font-size-value-lg: 48px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --transition-fast: 120ms linear;
+  --transition-base: 150ms ease;
+  --transition-slow: 220ms ease;
+  --shadow-card-hover: 0 8px 24px rgba(168, 85, 247, 0.18);
+  --shadow-input-focus: 0 0 0 3px rgba(168, 85, 247, 0.22);
+  --gradient-brand: linear-gradient(135deg, #A855F7 0%, #EC4899 100%);
+}

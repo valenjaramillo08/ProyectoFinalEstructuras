@@ -1,0 +1,131 @@
+@import './variables.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: theme('backgroundImage.gradient-app');
+    background-attachment: fixed;
+    color: theme('colors.textoPrincipal');
+    font-family: theme('fontFamily.sans');
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: theme('colors.fondo');
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, theme('colors.acento'), theme('colors.rosa'));
+    border-radius: theme('borderRadius.lg');
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.acentoHover');
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  select:focus {
+    border-color: theme('colors.acento');
+    box-shadow: var(--shadow-input-focus);
+    outline: none;
+  }
+
+  select option:checked,
+  select option:hover {
+    background: theme('colors.fondoSuave');
+    color: theme('colors.textoPrincipal');
+  }
+
+  ::selection {
+    background: rgb(168 85 247 / 0.22);
+    color: theme('colors.textoPrincipal');
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid theme('colors.borde');
+  }
+
+  .card-panel {
+    @apply bg-superficie border border-borde rounded-lg shadow-sutil p-6 transition-all duration-200;
+  }
+
+  .card-panel:hover {
+    @apply shadow-media border-bordeActivo;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md font-medium text-white
+      bg-gradient-brand shadow-acento transition-all duration-200
+      hover:opacity-95 hover:shadow-flotante active:scale-[0.98]
+      disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md font-medium
+      border border-borde bg-superficie text-textoPrincipal transition-all duration-200
+      hover:border-bordeActivo hover:bg-fondoSuave active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply text-sm font-medium text-acento hover:text-acentoHover transition-colors duration-150;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-superficie border border-borde rounded-md outline-none transition-all duration-150
+      placeholder:text-textoSecundario/60
+      focus:border-acento focus:ring-2 focus:ring-acento/20;
+  }
+
+  .stat-card {
+    @apply p-5 rounded-lg border border-borde bg-superficie transition-all duration-200
+      hover:-translate-y-0.5 hover:shadow-media hover:border-bordeActivo;
+  }
+
+  .stat-card-highlight {
+    @apply stat-card border-l-4 border-l-acento bg-gradient-to-br from-fondo to-fondoSuave;
+  }
+
+  .page-title {
+    @apply text-4xl font-bold leading-tight bg-gradient-brand bg-clip-text text-transparent;
+  }
+
+  .skeleton {
+    @apply rounded-md bg-gradient-to-r from-borde via-fondoSuave to-borde bg-[length:200%_100%] animate-shimmer;
+  }
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-acento focus-visible:ring-offset-2 focus-visible:ring-offset-fondo;
+  }
+}
+
+.tooltip-arrow::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px;
+  border-style: solid;
+  border-color: theme('colors.textoPrincipal') transparent transparent transparent;
+}
